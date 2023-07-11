@@ -15,7 +15,8 @@ public class ApiGatewayConfiguration {
 				routes().
 				route(p->p.path("/get").uri("http://httpbin.org:80"))
 				.route(p-> p.path("/currency-exchange/**").uri("lb://currency-exchange")).
-				route(p->p.path("/currencyconversion/**").uri("lb://currency-conversion"))
+				route(p->p.path("/currencyconversion/**").uri("lb://currency-conversion")).
+				route(p->p.path("/currencyconversion-feign/**").uri("lb://currency-conversion"))
 				
 				.build();
 	}
